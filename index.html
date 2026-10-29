@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Welcome to Super Surf Shack — your laid-back spot for surf, sun, and good times." />
+  <title>Welcome to Super Surf Shack</title>
+  <style>
+    :root {
+      --ocean: #00457c;
+      --deep-ocean: #062c4a;
+      --foam: #eaf7fb;
+      --sand: #fff3d9;
+      --ink: #183044;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+    .topbar {
+      min-height: 72px;
+      padding: 0 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      color: var(--white);
+      background: var(--ocean);
+    }
+    .brand {
+      color: var(--white);
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: .03em;
+      text-decoration: none;
+    }
+    nav { display: flex; flex-wrap: wrap; gap: 24px; }
+    nav a { color: #e8f7ff; font-size: .95rem; text-decoration: none; }
+    nav a:hover, nav a:focus-visible { text-decoration: underline; }
+
+    .hero {
+      min-height: 590px;
+      padding: 100px 7%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 50% 115%, rgba(255, 243, 217, .95) 0 12%, transparent 12.5%),
+        linear-gradient(180deg, rgba(2, 42, 72, .12), rgba(2, 42, 72, .66)),
+        linear-gradient(165deg, #4db7dc 0%, #1683b5 48%, #075783 49%, #063955 100%);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -5%;
+      right: -5%;
+      bottom: -80px;
+      height: 150px;
+      border-radius: 50% 50% 0 0;
+      background: var(--sand);
+      transform: rotate(-2deg);
+    }
+    .hero-content { max-width: 760px; position: relative; z-index: 1; }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: #d7f5ff;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      line-height: 1.02;
+      letter-spacing: -.045em;
+    }
+    .hero p:not(.eyebrow) { max-width: 560px; margin: 22px auto 30px; font-size: 1.15rem; }
+    .button {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 999px;
+      color: var(--deep-ocean);
+      background: var(--sand);
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .16);
+      transition: transform .18s ease, background .18s ease;
+    }
+    .button:hover { background: #fff; transform: translateY(-2px); }
+
+    main section { padding: 76px 7%; }
+    .intro { background: var(--sand); text-align: center; }
+    .section-inner { max-width: 1050px; margin: 0 auto; }
+    h2 { margin: 0 0 14px; color: var(--ocean); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; }
+    .intro p { max-width: 700px; margin: 0 auto; font-size: 1.08rem; }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
+    .card {
+      min-height: 205px;
+      padding: 26px;
+      border: 1px solid #dcebf0;
+      border-radius: 18px;
+      background: var(--white);
+      box-shadow: 0 12px 30px rgba(6, 44, 74, .07);
+    }
+    .card-icon { font-size: 1.8rem; }
+    .card h3 { margin: 10px 0 7px; color: var(--deep-ocean); }
+    .card p { margin: 0; color: #526777; }
+
+    .visit { background: var(--foam); text-align: center; }
+    .visit p { margin: 0 auto 22px; max-width: 620px; }
+    .visit .button { color: var(--white); background: var(--ocean); }
+    .visit .button:hover { background: var(--deep-ocean); }
+
+    footer { padding: 24px 7%; color: #d8e9f3; background: var(--deep-ocean); text-align: center; font-size: .9rem; }
+    footer p { margin: 0; }
+
+    @media (max-width: 700px) {
+      .topbar { padding: 17px 6%; align-items: flex-start; flex-direction: column; gap: 10px; }
+      nav { gap: 16px; }
+      .hero { min-height: 520px; padding: 78px 6%; }
+      main section { padding: 58px 6%; }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home">🌊 Super Surf Shack</a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#surf">The Surf</a>
+      <a href="#visit">Visit</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">Sunshine • Saltwater • Good times</p>
+        <h1>Catch a wave.<br />Stay awhile.</h1>
+        <p>Your laid-back beach stop for surf, salty air, and days that turn into stories.</p>
+        <a class="button" href="#visit">Come say hello</a>
+      </div>
+    </section>
+
+    <section class="intro" id="about">
+      <div class="section-inner">
+        <h2>Welcome to the good side of the coast.</h2>
+        <p>Whether you’re chasing your first wave or taking a break from the beach, Super Surf Shack is here for easygoing days and a little more ocean in your life.</p>
+      </div>
+    </section>
+
+    <section id="surf">
+      <div class="section-inner">
+        <h2>A little something for everyone</h2>
+        <div class="cards">
+          <article class="card">
+            <span class="card-icon" aria-hidden="true">🏄</span>
+            <h3>Find your wave</h3>
+            <p>New to surfing or already hooked? We’ll help you make the most of your time in the water.</p>
+          </article>
+          <article class="card">
+            <span class="card-icon" aria-hidden="true">☀️</span>
+            <h3>Take it slow</h3>
+            <p>Kick back, soak up the sunshine, and enjoy a slower pace by the sea.</p>
+          </article>
+          <article class="card">
+            <span class="card-icon" aria-hidden="true">🐚</span>
+            <h3>Make a day of it</h3>
+            <p>Bring your crew, explore the shoreline, and leave with a story worth telling.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="section-inner">
+        <h2>Your next beach day starts here.</h2>
+        <p>Have a question or want to plan a visit? Add your business email or booking link to this button before publishing.</p>
+        <!-- Replace # with your email link or booking page, for example: mailto:hello@example.com -->
+        <a class="button" href="#home">Get in touch</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Super Surf Shack · Keep it salty.</p>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
